@@ -31,6 +31,15 @@ $header-height: 80px;
 $breakpoint-tablet: 871px;
 $breakpoint-mobile: 520px;
 
+// ========================================
+// Mixin定義
+// ========================================
+@mixin container {
+  max-width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 html {
   line-height: 1;
 }
@@ -46,10 +55,8 @@ header {
   height: $header-height;
 }
 .header-inner {
-  max-width: $container-width;
+  @include container;
   height: 100%;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -84,9 +91,7 @@ header {
   background-position: center;
 }
 .feature-inner {
-  max-width: $container-width;
-  margin-left: auto;
-  margin-right: auto;
+  @include container;
   padding: 40px 20px 100px;
 }
 .heading-title {
