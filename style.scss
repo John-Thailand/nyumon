@@ -50,138 +50,148 @@ img {
   max-width: 100%;
   height: auto;
 }
-header {
+
+.header {
   background-color: $color-primary;
   height: $header-height;
-}
-.header-inner {
-  @include container;
-  height: 100%;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header-logo {
-  a {
-    color: $color-white;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
+  &__inner {
+    @include container;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-}
-.header-menu {
-  ul {
+  &__logo {
+    a {
+      color: $color-white;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+    }
+  }
+  &__menu {
     display: flex;
   }
-}
-.header-menu-list {
-  margin-right: 20px;
-  &:last-child {
-    margin-right: 0;
+  &__menu-item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      color: $color-white;
+      font-size: $font-size-md;
+    }
   }
-  a {
-    color: $color-white;
-    font-size: $font-size-md;
-  }
 }
+
 .fv {
   height: 603px;
   background-image: url(/img/fv\ 1.jpg);
   background-size: cover;
   background-position: center;
 }
-.feature-inner {
-  @include container;
-  padding: 40px 20px 100px;
-}
-.heading-title {
-  font-size: $font-size-2xl;
-  color: $color-text;
-  font-weight: $font-weight-bold;
-  text-align: center;
-  margin-bottom: 47px;
-}
-.feature-box {
-  display: flex;
-  justify-content: space-between;
-}
-.img-area {
-  figure {
-    width: 480px;
-    height: 329px;
+
+.feature {
+  &__inner {
+    @include container;
+    padding: 40px 20px 100px;
+  }
+  &__heading {
+    font-size: $font-size-2xl;
+    color: $color-text;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin-bottom: 47px;
+  }
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__img-area {
+    figure {
+      width: 480px;
+      height: 329px;
+    }
+  }
+  &__text-area {
+    margin-left: 60px;
+  }
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: 30px;
+    color: $color-text;
+  }
+  &__description {
+    font-size: $font-size-sm;
+    color: $color-text;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  &__button {
+    display: inline-block;
+    padding: 15px 57px;
+    color: $color-white;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    background-color: $color-primary;
   }
 }
-.text-area {
-  margin-left: 60px;
-}
-.text-area-title {
-  font-size: $font-size-2xl;
-  font-weight: $font-weight-bold;
-  margin-bottom: 30px;
-  color: $color-text;
-}
-.text-area-desc {
-  font-size: $font-size-sm;
-  color: $color-text;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
-.cta-btn {
-  display: inline-block;
-  padding: 15px 57px;
-  color: $color-white;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-bold;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  background-color: $color-primary;
-}
-footer {
+
+.footer {
   background-color: $color-primary;
   padding: 22px 0 19px;
   text-align: center;
-}
-.footer-logo {
-  color: $color-white;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-bold;
-  margin-bottom: 23px;
-}
-.copyright {
-  font-size: $font-size-xs;
-  color: $color-white;
+  &__logo {
+    color: $color-white;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: 23px;
+  }
+  &__copyright {
+    font-size: $font-size-xs;
+    color: $color-white;
+  }
 }
 
 @media screen and (max-width: $breakpoint-tablet) {
-  .feature-box {
-    flex-direction: column;
-    text-align: center;
-  }
-  .img-area {
-    figure {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
+  .feature {
+    &__box {
+      flex-direction: column;
+      text-align: center;
     }
-  }
-  .text-area {
-    margin-left: 0;
+    &__img-area {
+      figure {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+      }
+    }
+    &__text-area {
+      margin-left: 0;
+    }
   }
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
+  .header {
+    &__menu-item {
+      a {
+        font-size: $font-size-sm;
+      }
+    }
+  }
   .fv {
     height: 380px;
   }
-  .img-area {
-    figure {
-      width: 100%;
-      height: auto;
-    }
-  }
-  .header-menu-list {
-    a {
-      font-size: $font-size-sm;
+  .feature {
+    &__img-area {
+      figure {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
